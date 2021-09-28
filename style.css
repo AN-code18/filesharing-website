@@ -1,0 +1,221 @@
+body, html{
+    font-family: sans-serif;
+    font-size: 19px;
+    background:#dce0ee;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+ 
+}
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 150px;
+  }
+body ,
+ .drop-zone , .upload-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; 
+}
+
+body{
+    flex-direction: row;
+}
+
+.upload-container{
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0px 20px 20px #0000002e;
+}
+
+.dragged.drop-zone{
+  background: #e2e6f746;
+  border-color: rgba(10, 78, 161, 0.486);
+  /*rgba(71, 121, 179, 0.418);v*/
+}
+
+
+.drop-zone{
+    width: 500px;
+    min-height: 250px;
+    border: 3px dashed #123e8059;
+    margin: 30px;
+    border-radius: 10px;
+    transition :all .2s ease;
+}
+.icon-conatiner{
+    width: 75px;
+    height: 100px;
+    position: relative;
+    transform-origin: bottom;
+}
+.icon-conatiner img{
+    width: 70px;
+    position: absolute;
+    transform-origin: bottom;
+    transition: transform 250ms ease-in-out;
+}
+
+.icon-conatiner .center{
+    z-index: 2;
+}
+
+.dragged .icon-conatiner .right{
+    transform: rotate(15deg) translateX(30px) scale(.9);
+}
+
+.dragged .icon-conatiner .left{
+    transform: rotate(-15deg) translateX(-30px) scale(.9);
+    
+}
+.dragged .icon-conatiner .center{
+    transform: translateY(-5px);
+}
+
+#fileinput{
+    display: none;
+}
+
+.browseBtn{
+    color:#4960a7;
+    cursor: pointer;
+}
+
+.progress-container{
+    width: 550px;
+    height: 60px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    border: 2px solid rgba(150, 174, 199, 0.418);
+    position: relative;
+    display: none;
+}
+
+.progress-container .bg-progress{
+    background:  #dadde2;
+    width: 0%;
+    height: 100%;
+    border-radius: 2%;
+    transform-origin: left;
+    transition : width .25s linear;
+    position: absolute;
+  
+}
+
+.progress-container .inner-container{
+    position: absolute;
+    z-index: 1;
+    width: 550px;
+    margin-left:10px;
+    margin-top: 5px;
+}
+.percent-container {
+    font-size: 13px;
+    margin: 3px;
+}
+ .sharing-container{
+     width: 550px;
+     margin-bottom: 25px;
+    display: none; 
+ }
+ .sharing-container .input-container{
+     position: relative;
+ }
+.sharing-container .input-container input{
+    width:100%;
+    border: 2px dashed #065a8850;
+    border-radius: 4px;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    font-size: 17px;
+    background: rgba(179, 206, 255, 0.836);
+}
+.input-container img{
+    position: absolute;
+    height: 18px;
+    width: 25px;
+    right:3px;
+    top: 6px;
+    cursor: pointer;
+}
+p{
+    text-align: center;
+}
+.email-container{
+    display: flex;
+    align-items: center;
+}
+
+.email-container form{
+    width: 100%;
+    border: 2px solid rgba(179, 206, 255, 0.836);
+    border-radius: 6px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+.email-container .field{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    width: 450px;
+    
+}
+.email-container label{
+    font-size: 15px;
+}
+.email-container input {
+    font-size: 15px;
+    border: none;
+    border-bottom: 2px solid rgba(179, 206, 255, 0.836);
+    text-align: center;
+}
+.email-container input:focus{
+    outline: none;
+}
+#btn{
+    font-size: 15px;
+    padding: 5px 20px;
+    border: none;
+    background: rgba(142, 175, 236, 0.836);
+    border-radius: 4px;
+    margin-top: 10px ;
+    cursor: pointer;
+
+}
+.alert{
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50% , 60px);
+    padding: 10px 20px;
+    border-radius: 5px;
+    background: #7b91b8;
+    font-size: 18px;
+    transition: transform ease-in-out 0.2s;
+}
+.upload-img {
+  background: url(upload2-img.svg) no-repeat center;
+  background-size: contain;
+  height: 46%;
+  width: 48%;
+}
+
+@media screen and (max-width :900px){
+    .drop-zone{
+        width: 320px;
+    }
+    .upload-img{
+        display: none;
+    }
+    .email-container .field{
+        flex-direction: column;
+        width: 300px;
+    }
+}
